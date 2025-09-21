@@ -1,8 +1,33 @@
 <!DOCTYPE html>
-<html>
-  <body>
-    <h1>TEST PAGE</h1>
-    <p>If you see this, GitHub Pages is working.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>R1 Facebook</title>
+  <style>
+    body {
+      margin: 0;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+    .loading {
+      text-align: center;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.body.innerHTML = '<div class="loading"><h1>Loading 
+Facebook…</h1></div>';
+      setTimeout(function() {
+        window.location.href = "https://www.facebook.com/";
+      }, 1200);
+    });
+  </script>
+</head>
+<body>
+</body>
 </html>
 
