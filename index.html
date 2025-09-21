@@ -2,17 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Rabbit R1 App Test</title>
+  <title>R1 Google</title>
   <style>
-    body { margin: 0; background: #fff; }
+    body {
+      margin: 0;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+    .loading {
+      text-align: center;
+    }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.body.innerHTML = '<div class="loading"><h1>Loading 
+Google…</h1></div>';
+      setTimeout(function() {
+        // Top-level redirect—no iframe
+        window.location.href = "https://www.google.com/";
+      }, 1200); // Adjust delay if needed
+    });
+  </script>
 </head>
 <body>
-  <div id="r1-container" 
-style="width:240px;height:282px;display:flex;align-items:center;justify-content:center;">
-    <iframe src="https://www.google.com" width="240" height="282" 
-style="border:none;"></iframe>
-  </div>
 </body>
 </html>
-
