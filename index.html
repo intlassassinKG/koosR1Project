@@ -3,15 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wikipedia Homepage Link</title>
+    <title>Rabbit R1 QR Code Generator</title>
+    <script 
+src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        body { font-family: Arial; text-align: center; margin-top: 5vw; }
+        input { width: 40vw; padding: 0.5em; font-size: 1.1em; }
+        button { font-size: 1em; padding: 0.7em 1.2em; margin: 1em; }
+        #qrcode { margin-top: 1em; }
+    </style>
 </head>
 <body>
-    <h1>Visit Wikipedia</h1>
-    <p>
-        Click this link to visit 
-        <a href="https://en.wikipedia.org/" target="_blank" rel="noopener 
-noreferrer">Wikipedia</a>.
-    </p>
+    <h1>Rabbit R1 QR Code Generator</h1>
+    <p>Paste the full creation install URL or your R1-compatible link 
+below:</p>
+    <input id="input-url" type="text" 
+placeholder="https://rabbit.tech/creations/[your-plugin-id]" 
+autocomplete="off">
+    <button onclick="generateQR()">Generate QR</button>
+    <div id="qrcode"></div>
+
+    <script>
+        function generateQR() {
+            var input = document.getElementById('input-url').value;
+            document.getElementById('qrcode').innerHTML = "";
+            if (input.trim().length > 0) {
+                new QRCode(document.getElementById("qrcode"), {
+                    text: input,
+                    width: 256,
+                    height: 256
+                });
+            }
+        }
+    </script>
 </body>
 </html>
 
